@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorSurface"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/topSection"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Индикатор серии -->
+        <TextView
+            android:id="@+id/tvStreak"
+            android:text="🔥 Серия: 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Прогресс-бар дня -->
+        <ProgressBar
+            android:id="@+id/dailyProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:progress="0"
+            android:max="10"
+            android:progressTint="@color/primaryColor"
+            android:backgroundTint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tvDaily"
+            android:text="0 / 10 за сегодня"
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- Карточка с вопросом -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/questionCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            card_view:cardElevation="8dp"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardBackgroundColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:padding="16dp"
+                android:text="Вопрос появится здесь"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Поле для ответа -->
+        <EditText
+            android:id="@+id/etAnswer"
+            android:hint="Ваш ответ"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/bg_edittext_rounded"
+            android:textColor="?attr/colorOnSurface"
+            android:textColorHint="@color/textSecondary" />
+
+        <!-- Кнопка ответа -->
+        <Button
+            android:id="@+id/btnSubmit"
+            android:text="Ответить"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Обратная связь -->
+        <TextView
+            android:id="@+id/tvFeedback"
+            android:text=""
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnToggleTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:contentDescription="Переключить тему"/>
+
+    </LinearLayout>
+
+    <!-- Нижние кнопки -->
+    <LinearLayout
+        android:id="@+id/bottomButtons"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:text="➕ Добавить"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@color/textPrimary"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btnList"
+            android:text="📜 Список"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>
